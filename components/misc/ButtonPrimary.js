@@ -1,8 +1,15 @@
 import React from "react";
 
-const ButtonPrimary = ({ children, addClass }) => {
+const ButtonPrimary = ({ children, addClass,data}) => {
+  
+const HandleClick = () => alert('No. Rekening telah di copy');
+const cop = () =>  navigator.clipboard.writeText(data)
+
   return (
-    <button
+    <button onClick={() => {
+      cop()
+      HandleClick()
+    }}
       className={
         "py-3 lg:py-4 px-12 lg:px-16 text-white-500 font-semibold rounded-lg bg-orange-500 hover:shadow-orange-md transition-all outline-none " +
         addClass
